@@ -14,7 +14,7 @@ public:
     Teacher(const string& name, unsigned int age, const string& subject);
     // We don't need... you know
     string GetSubject()const;
-    string ToString()const;
+    virtual string ToString()const;
 };
 
 

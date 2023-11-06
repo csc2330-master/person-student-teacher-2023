@@ -15,7 +15,7 @@ private:
 public:
     Person(const string& name, unsigned int age = 0);
     // We do not need Cpy Ctr, Cpy Assgmt Op, Dtor
-    string ToString()const;
+    virtual string ToString()const;
     unsigned int GetAge()const;
     void Birthday();
 };

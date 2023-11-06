@@ -15,7 +15,7 @@ public:
     // We don't need cpy ctor, dtor, cpy assgmt operator
     double GetGpa() const;
     void SetGpa(double gpa);
-    string ToString()const;
+    virtual string ToString()const;
 };
 
 
