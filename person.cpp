@@ -5,14 +5,16 @@
 #include "person.h"
 
 #include <string>
+#include <cstring>
 #include <sstream>
 
 using std::string;
 using std::stringstream;
 
 
-Person::Person(const string &name, unsigned int age): _name(name), _age(age) {
-
+Person::Person(const char* name, unsigned int age):  _age(age) {
+    _name = new char[strlen(name) + 1];
+    strcpy(_name, name);
 }
 
 string Person::ToString() const {

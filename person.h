@@ -10,10 +10,13 @@ using std::string;
 
 class Person {
 private:
-    string _name; // Composition == "has-a" relationship
+    char* _name;
     unsigned int _age;
 public:
-    Person(const string& name, unsigned int age = 0);
+    Person(const char* name, unsigned int age = 0);
+    ~Person();
+    Person(const Person& p);
+    const Person& operator=(const Person & rhs);
     // We do not need Cpy Ctr, Cpy Assgmt Op, Dtor
     virtual string ToString()const;
     unsigned int GetAge()const;
