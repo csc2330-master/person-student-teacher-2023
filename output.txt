@@ -1,0 +1,61 @@
+20,21
+Name: Charly Age: 0
+Name: Joe Age: 17 GPA: 0.0
+Name: Jenny Age: 32 Subject: Science
+
+23,24
+Name: Charly Age: 0
+Name: Joe Age: 17 GPA: 0.0
+Name: Jenny Age: 32 Subject: Science
+
+26,28
+Name: Charly Age: 0
+Name: Joe Age: 17 GPA: 0.0
+Name: Jenny Age: 32 Subject: Science
+
+29
+Name: Jenny Age: 32
+
+------
+16
+    Person::Person(const char*)
+
+17
+    Person::Person(const char*, unsigned int)
+    Student::Student(const char*, unsigned int)
+
+18
+    Person::Person(const char*, unsigned int)
+    Teacher::Teacher(const char*, unsigned int, const char*)
+
+29
+    Person::Person(const Person&) [A]
+
+39
+    Person::~Person() [A]
+
+30
+    Person::Person(const Person&) [B]
+
+32
+    Person::~Person() [B]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

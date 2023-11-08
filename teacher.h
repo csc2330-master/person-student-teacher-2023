@@ -12,7 +12,7 @@ private:
     char* _subject;
 public:
     Teacher(const char* name, unsigned int age, const char* subject);
-    ~Teacher();
+    virtual ~Teacher();
     Teacher(const Teacher& t);
     const Teacher& operator=(const Teacher& rhs);
     string GetSubject()const;

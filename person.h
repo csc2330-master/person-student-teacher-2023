@@ -14,7 +14,7 @@ private:
     unsigned int _age;
 public:
     Person(const char* name, unsigned int age = 0);
-    ~Person();
+    virtual ~Person();
     Person(const Person& p);
     const Person& operator=(const Person & rhs);
     // We do not need Cpy Ctr, Cpy Assgmt Op, Dtor

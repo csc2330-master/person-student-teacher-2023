@@ -3,28 +3,53 @@
 #include "teacher.h"
 
 #include <iostream>
+#include <vector>
 
 using std::cout;
 using std::endl;
+using std::vector;
 // https://github.com/csc2330-master/person-student-teacher-2023
 void PrintPerson(Person& p);
-
+void AnotherOneBitesTheDust(Person p);
 int main() {
-    Person a("Charly");
-    Student b("Joe", 17);
-    Teacher c("Jenny", 32, "Science");
+    vector<Person*> people;
+    people.push_back(new Person("Charly"));
+    people.push_back(new Student("Joe", 17));
+    people.push_back(new Teacher("Jenny", 32, "Science"));
+    people.push_back(new Student("Kylie", 16));
+    people.push_back(new Person("Agamenon"));
+    people.push_back(new Student("Allie", 21));
+    people.push_back(new Teacher("George", 32, "Math"));
+    people.push_back(new Teacher("John", 32, "Art"));
+    people.push_back(new Student("Betty", 22));
 
-    cout << a.ToString() << endl;       // Name: Charly Age: 0
-    cout << b.ToString() << endl;       // Name: Joe Age: 17 GPA: 0.0
-    cout << c.ToString() << endl;       // Name: Jenny Age: 32 Subject: Science
+    for (Person* p : people) {
+        Student* s = dynamic_cast<Student*>(p);
+        if (s != nullptr){
+            s->SetGpa(3.5);
+        }
+    }
 
-    PrintPerson(a);                   // Name: Charly Age: 0
-    PrintPerson(b);                   // Name: Joe Age: 17 GPA: 0.0
-    PrintPerson(c);                   // Name: Jenny Age: 32 Subject: Science
-
+    for (int i = 0; i < people.size(); ++i) {
+        cout << people[i]->ToString() << endl;
+    }
+    for (int i = 0; i < people.size(); ++i) {
+        PrintPerson(*people[i]);
+    }
+    for (Person* p : people) {
+        cout << p->ToString() << endl;
+    }
+    AnotherOneBitesTheDust(*people[2]);
+    Person q(*people[0]);
+    for (int i = 0; i < people.size(); ++i) {
+        delete people[i];
+    }
     return 0;
 }
 
 void PrintPerson(Person& p){
+    cout << p.ToString() << endl;
+}
+void AnotherOneBitesTheDust(Person p){
     cout << p.ToString() << endl;
 }
