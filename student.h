@@ -11,7 +11,7 @@ class Student: public Person {
 private:
     double _gpa;
 public:
-    Student(const string& name, unsigned int age, double gpa=0.0);
+    Student(const char* name, unsigned int age, double gpa=0.0);
     // We don't need cpy ctor, dtor, cpy assgmt operator
     double GetGpa() const;
     void SetGpa(double gpa);

@@ -30,3 +30,20 @@ unsigned int Person::GetAge() const {
 void Person::Birthday() {
     _age++;
 }
+
+Person::~Person() {
+    delete[] _name;
+}
+
+Person::Person(const Person &p): _age(p._age) {
+    _name = new char[strlen(p._name) + 1];
+    strcpy(_name, p._name);
+}
+
+const Person &Person::operator=(const Person &rhs) {
+    delete[] _name;
+    _name = new char[strlen(rhs._name) + 1];
+    strcpy(_name, rhs._name);
+
+    return *this;
+}

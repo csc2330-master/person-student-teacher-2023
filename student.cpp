@@ -8,7 +8,7 @@
 using std::string;
 using std::stringstream;
 
-Student::Student(const string& name, unsigned int age, double gpa):Person(name, age), _gpa(gpa) {
+Student::Student(const char* name, unsigned int age, double gpa):Person(name, age), _gpa(gpa) {
 
 }
 

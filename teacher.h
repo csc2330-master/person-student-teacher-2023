@@ -9,10 +9,12 @@
 
 class Teacher : public Person {
 private:
-    string _subject;
+    char* _subject;
 public:
-    Teacher(const string& name, unsigned int age, const string& subject);
-    // We don't need... you know
+    Teacher(const char* name, unsigned int age, const char* subject);
+    ~Teacher();
+    Teacher(const Teacher& t);
+    const Teacher& operator=(const Teacher& rhs);
     string GetSubject()const;
     virtual string ToString()const;
 };
